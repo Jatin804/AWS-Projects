@@ -155,17 +155,30 @@ Configuration:
 
 ---
 
-# Step 7: Create a instance
+# Step 7: Create Bastion Host (SSH Access)
 
-1. Choose name and AMI : communicator-machine
-2. In networks section select VPC (Created few min ago)
-3. Enable Public IP
-4. Key pair
-5. Security Group 
-6. Launch Instance
+1. To securely access private EC2 instances
+2. Launch a new EC2 instance
+3. Name: bastion-host or any meaningful
+4. Place it in a public subnet
+5. Enable Public IP
+6. Attach Bastion Security Group
+7. Use the same key pair
 
-* Do scp -i key <locatioon of key in device> <where to save in instance> to share target group / instances IP inside this AMI 
-* Do ssh -i key ec2-user@ip
+## SSH Workflow
+
+From your local machine:
+
+* copy key to ec2-instance\
+```scp -i your-key.pem key-location-to-transfer-for-instance-connection/key.pem location ec2-instance/location-key.pem``` 
+* ssh to connect to private ec2-instance\
+```ssh -i your-key.pem ec2-user@<bastion-public-ip>```
+
+From Bastion to private instance:
+
+```ssh -i your-key.pem ec2-user@<private-instance-ip>```
+
+This allows secure communication without exposing private instances to the internet.
 
 ---
 
