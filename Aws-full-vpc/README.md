@@ -139,7 +139,7 @@ Configuration:
 Configuration:
 
 * Launch Template: previously created
-![alt text](<images/Screenshot 2026-02-13 at 12.08.33 PM.jpeg>.)
+![alt text](<images/Screenshot 2026-02-13 at 12.08.33 PM.jpeg>)
 * VPC: Project-VPC
 * Subnets: Private-Subnet-1 and Private-Subnet-2
 ![alt text](<images/Screenshot 2026-02-13 at 12.17.26 PM.jpeg>)
